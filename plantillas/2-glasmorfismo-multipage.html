@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AURA Boutique — Moda en cristal oscuro</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--teal:#062a30;--teal2:#0d4a52;--gold:#e8c27a;--rose:#f2b5c0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Jost',sans-serif;color:#f4efe6;background:var(--teal);min-height:100vh}
+  h1,h2,h3,h4,.brand{font-family:'Cormorant Garamond',serif;font-weight:700}
+  .scene{position:fixed;inset:0;z-index:-1;background:
+    linear-gradient(160deg,rgba(6,42,48,.88),rgba(13,74,82,.7) 50%,rgba(60,20,40,.8)),
+    url('https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1800&q=80') center/cover}
+  .glass{background:rgba(255,255,255,.08);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(232,194,122,.35);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+  .navbar{background:rgba(6,42,48,.55);backdrop-filter:blur(14px);border-bottom:1px solid rgba(232,194,122,.3)}
+  .navbar .nav-link{color:#f4efe6;letter-spacing:.04em}
+  .navbar .nav-link.active,.navbar .nav-link:hover{color:var(--gold)}
+  .navbar-toggler{border-color:var(--gold);color:var(--gold)}
+  .navbar-toggler-icon{filter:invert(80%) sepia(40%) saturate(500%) hue-rotate(5deg)}
+  .brand{font-size:1.9rem;color:var(--gold);letter-spacing:.06em}
+  .btn-gold{background:var(--gold);color:#2a1a00;border:0;border-radius:2rem;padding:.7rem 1.8rem;font-weight:500}
+  .btn-gold:hover{background:#f6d79b;color:#2a1a00}
+  .btn-outline-glass{border:1px solid var(--gold);color:var(--gold);border-radius:2rem;padding:.7rem 1.8rem}
+  .btn-outline-glass:hover{background:var(--gold);color:#2a1a00}
+  .hero{min-height:88vh;display:flex;align-items:center}
+  .hero h1{font-size:clamp(2.8rem,7vw,5.5rem);line-height:1}
+  .hero h1 em{color:var(--rose)}
+  .prod-img{aspect-ratio:3/4;object-fit:cover;width:100%;border-radius:.9rem}
+  .price{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700}
+  .chip{border:1px solid rgba(232,194,122,.5);color:#f4efe6;background:transparent;border-radius:2rem;padding:.4rem 1.1rem}
+  .chip.on,.chip:hover{background:var(--gold);color:#2a1a00}
+  .form-control{background:rgba(255,255,255,.1);border:1px solid rgba(232,194,122,.35);color:#fff;border-radius:.8rem}
+  .form-control:focus{background:rgba(255,255,255,.16);color:#fff;border-color:var(--gold);box-shadow:0 0 0 .2rem rgba(232,194,122,.25)}
+  .form-control::placeholder{color:rgba(255,255,255,.6)}
+  .social a{width:42px;height:42px;border-radius:50%;display:inline-grid;place-items:center;color:var(--gold);border:1px solid rgba(232,194,122,.5);text-decoration:none}
+  .social a:hover{background:var(--gold);color:#2a1a00}
+  .band{position:relative;border-radius:1.5rem;overflow:hidden}
+  .band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .band::after{content:"";position:absolute;inset:0;background:rgba(6,42,48,.6)}
+  .band>.content{position:relative;z-index:1}
+  [hidden]{display:none!important}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="scene"></div>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand brand" href="#inicio">AURA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+        <li class="nav-item"><a class="nav-link" data-link="inicio" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="tienda" href="#tienda">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="nosotros" href="#nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="contacto" href="#contacto">Contacto</a></li>
+        <li class="nav-item"><a class="btn btn-outline-glass ms-lg-2 mt-2 mt-lg-0" href="#tienda"><i class="bi bi-bag"></i> Carrito <span id="count">0</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- INICIO -->
+<section data-page="inicio">
+  <div class="container hero">
+    <div class="row align-items-center g-5 w-100">
+      <div class="col-lg-7">
+        <p class="text-uppercase small" style="letter-spacing:.3em;color:var(--rose)">Colección Cristal Noir</p>
+        <h1 class="mt-3">Elegancia que <em>deja ver</em> tu esencia</h1>
+        <p class="lead mt-4 text-white-50" style="max-width:34rem">Prendas atemporales con acabados dorados y tejidos fluidos. Diseñadas para quienes eligen con calma.</p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="#tienda" class="btn btn-gold">Ir a la tienda</a>
+          <a href="#nosotros" class="btn btn-outline-glass">Conocer la marca</a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="glass p-3 rounded-4">
+          <img class="prod-img" src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" alt="Modelo con abrigo oscuro">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <h2 class="display-6 mb-4">Categorías</h2>
+    <div class="row g-4">
+      <div class="col-md-4"><div class="glass p-3 rounded-4 h-100"><img class="prod-img" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=700&q=80" alt="Vestidos"><h3 class="mt-3 h4">Vestidos</h3><a href="#tienda" class="text-decoration-none" style="color:var(--gold)">Explorar <i class="bi bi-arrow-right"></i></a></div></div>
+      <div class="col-md-4"><div class="glass p-3 rounded-4 h-100"><img class="prod-img" src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=700&q=80" alt="Calzado"><h3 class="mt-3 h4">Calzado</h3><a href="#tienda" class="text-decoration-none" style="color:var(--gold)">Explorar <i class="bi bi-arrow-right"></i></a></div></div>
+      <div class="col-md-4"><div class="glass p-3 rounded-4 h-100"><img class="prod-img" src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=700&q=80" alt="Accesorios"><h3 class="mt-3 h4">Accesorios</h3><a href="#tienda" class="text-decoration-none" style="color:var(--gold)">Explorar <i class="bi bi-arrow-right"></i></a></div></div>
+    </div>
+  </div>
+
+  <div class="container pb-5">
+    <div class="band">
+      <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80" alt="">
+      <div class="content text-center py-5 px-3">
+        <h2 class="display-6">Envío gratis desde $80</h2>
+        <p class="text-white-50">Cambios y devoluciones durante 30 días.</p>
+        <a href="#tienda" class="btn btn-gold mt-2">Comprar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIENDA -->
+<section data-page="tienda" hidden>
+  <div class="container py-5">
+    <h1 class="display-4">Tienda</h1>
+    <p class="text-white-50">Selecciona una categoría para filtrar.</p>
+    <div class="d-flex flex-wrap gap-2 my-4" id="filters">
+      <button class="chip on" data-filter="all">Todo</button>
+      <button class="chip" data-filter="vestidos">Vestidos</button>
+      <button class="chip" data-filter="abrigos">Abrigos</button>
+      <button class="chip" data-filter="calzado">Calzado</button>
+      <button class="chip" data-filter="accesorios">Accesorios</button>
+    </div>
+    <div class="row g-4" id="grid"></div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section data-page="nosotros" hidden>
+  <div class="container py-5">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-4">Hecho con calma</h1>
+        <p class="text-white-50 mt-3">AURA nació en un pequeño taller con una idea simple: menos prendas, mejor elegidas. Trabajamos con telas de origen responsable y producciones cortas para evitar excedentes.</p>
+        <p class="text-white-50">Cada colección se piensa para combinarse con la anterior. Así tu clóset crece sin quedarse viejo.</p>
+        <div class="row g-3 mt-3">
+          <div class="col-6"><div class="glass rounded-4 p-3"><h3 class="h2 mb-0" style="color:var(--gold)">12 años</h3><small>diseñando moda</small></div></div>
+          <div class="col-6"><div class="glass rounded-4 p-3"><h3 class="h2 mb-0" style="color:var(--gold)">40 mil</h3><small>clientas felices</small></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6"><div class="glass rounded-4 p-3"><img class="prod-img" style="aspect-ratio:4/3" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80" alt="Taller y prendas"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section data-page="contacto" hidden>
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <h1 class="display-4">Hablemos</h1>
+        <p class="text-white-50">Escríbenos para pedidos especiales, tallas o seguimiento de envíos.</p>
+        <ul class="list-unstyled mt-4 text-white-50">
+          <li class="mb-2"><i class="bi bi-geo-alt me-2" style="color:var(--gold)"></i>Av. Principal 123, Ciudad</li>
+          <li class="mb-2"><i class="bi bi-telephone me-2" style="color:var(--gold)"></i>+00 123 456 789</li>
+          <li class="mb-2"><i class="bi bi-envelope me-2" style="color:var(--gold)"></i>hola@aura-boutique.com</li>
+        </ul>
+      </div>
+      <div class="col-lg-7">
+        <form class="glass rounded-4 p-4" onsubmit="event.preventDefault();this.reset();alert('Mensaje enviado. ¡Gracias!')">
+          <div class="row g-3">
+            <div class="col-md-6"><label class="form-label" for="n">Nombre</label><input id="n" class="form-control" required placeholder="Tu nombre"></div>
+            <div class="col-md-6"><label class="form-label" for="e">Correo</label><input id="e" type="email" class="form-control" required placeholder="tu@correo.com"></div>
+            <div class="col-12"><label class="form-label" for="m">Mensaje</label><textarea id="m" rows="5" class="form-control" required placeholder="¿En qué te ayudamos?"></textarea></div>
+            <div class="col-12"><button class="btn btn-gold">Enviar mensaje</button></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="navbar mt-5 py-4" style="border-top:1px solid rgba(232,194,122,.3);border-bottom:0">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+    <span class="brand">AURA</span>
+    <small class="text-white-50">© 2026 AURA Boutique. Todos los derechos reservados.</small>
+    <div class="social d-flex gap-2">
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+      <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const U=(id,w=700)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+const products=[
+ {n:'Vestido Medianoche',p:98,c:'vestidos',i:'1434389677669-e08b4cac3105'},
+ {n:'Vestido Perla',p:85,c:'vestidos',i:'1485968579580-b6d095142e6e'},
+ {n:'Abrigo Ónix',p:149,c:'abrigos',i:'1539109136881-3be0616acf4b'},
+ {n:'Chaqueta Bruma',p:119,c:'abrigos',i:'1551028719-00167b16eac5'},
+ {n:'Tacón Dorado',p:99,c:'calzado',i:'1543163521-1bf539c55dd2'},
+ {n:'Zapatilla Lumen',p:89,c:'calzado',i:'1560769629-975ec94e6a86'},
+ {n:'Bolso Ámbar',p:129,c:'accesorios',i:'1548036328-c9fa89d128fa'},
+ {n:'Bolso Alba',p:109,c:'accesorios',i:'1584917865442-de89df76afd3'}
+];
+const grid=document.getElementById('grid');let cart=0;
+grid.innerHTML=products.map(p=>`<div class="col-6 col-lg-3 prod" data-cat="${p.c}"><div class="glass rounded-4 p-2 h-100"><img class="prod-img" loading="lazy" src="${U(p.i)}" alt="${p.n}"><div class="p-2"><h3 class="h5 mb-1">${p.n}</h3><div class="d-flex justify-content-between align-items-center"><span class="price">$${p.p}</span><button class="btn btn-sm btn-gold add" aria-label="Agregar ${p.n}"><i class="bi bi-plus-lg"></i></button></div></div></div></div>`).join('');
+grid.addEventListener('click',e=>{if(e.target.closest('.add')){document.getElementById('count').textContent=++cart}});
+document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;
+ document.querySelectorAll('#filters .chip').forEach(x=>x.classList.toggle('on',x===b));
+ document.querySelectorAll('.prod').forEach(x=>x.hidden=!(b.dataset.filter==='all'||x.dataset.cat===b.dataset.filter))});
+const pages=[...document.querySelectorAll('[data-page]')];
+function route(){const h=(location.hash||'#inicio').slice(1);const ok=pages.some(p=>p.dataset.page===h);const t=ok?h:'inicio';
+ pages.forEach(p=>p.hidden=p.dataset.page!==t);
+ document.querySelectorAll('[data-link]').forEach(a=>a.classList.toggle('active',a.dataset.link===t));
+ window.scrollTo(0,0);const c=document.getElementById('menu');if(c.classList.contains('show'))bootstrap.Collapse.getOrCreateInstance(c).hide()}
+addEventListener('hashchange',route);route();
+document.addEventListener('error',e=>{if(e.target.tagName==='IMG'){e.target.onerror=null;e.target.src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='800'%3E%3Crect width='100%25' height='100%25' fill='%230d4a52'/%3E%3C/svg%3E"}},true);
+</script>
+</body>
+</html>

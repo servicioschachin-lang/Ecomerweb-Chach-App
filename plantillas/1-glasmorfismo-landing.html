@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VELO Studio — Moda en cristal</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--night:#1b1035;--coral:#ff7a59;--mint:#7cf3e0;--lilac:#c9a7ff}
+  html{scroll-behavior:smooth}
+  body{font-family:'Manrope',sans-serif;color:#fff;background:var(--night);min-height:100vh}
+  h1,h2,h3,.brand{font-family:'Unbounded',sans-serif}
+  .bg-scene{position:fixed;inset:0;z-index:-2;background:
+    radial-gradient(60rem 40rem at 10% 10%,rgba(255,122,89,.55),transparent 60%),
+    radial-gradient(50rem 40rem at 90% 30%,rgba(124,243,224,.35),transparent 60%),
+    radial-gradient(60rem 50rem at 40% 100%,rgba(201,167,255,.5),transparent 60%),var(--night)}
+  .glass{background:rgba(255,255,255,.12);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(255,255,255,.28);box-shadow:0 8px 32px rgba(10,0,40,.35),inset 0 1px 0 rgba(255,255,255,.35)}
+  .glass-strong{background:rgba(255,255,255,.2)}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.6rem;border-radius:999px;font-weight:600;transition:transform .2s,background .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-main{background:linear-gradient(135deg,var(--coral),#ff4f87);color:#fff;box-shadow:0 10px 30px rgba(255,90,100,.45)}
+  .btn-glass{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35)}
+  .blob{position:absolute;border-radius:50%;filter:blur(40px);opacity:.7;z-index:-1}
+  .card-img{aspect-ratio:3/4;object-fit:cover;width:100%;border-radius:1rem}
+  :focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+  @media (prefers-reduced-motion:no-preference){.float{animation:float 7s ease-in-out infinite}@keyframes float{50%{transform:translateY(-14px)}}}
+</style>
+</head>
+<body>
+<div class="bg-scene"></div>
+
+<!-- NAV -->
+<header class="fixed top-4 inset-x-0 z-50 px-4">
+  <nav class="glass max-w-6xl mx-auto rounded-full px-5 py-3 flex items-center justify-between">
+    <a href="#inicio" class="brand text-lg font-extrabold tracking-tight">VELO<span class="text-[var(--mint)]">.</span>studio</a>
+    <ul class="hidden md:flex items-center gap-8 text-sm">
+      <li><a class="hover:text-[var(--mint)]" href="#colecciones">Colecciones</a></li>
+      <li><a class="hover:text-[var(--mint)]" href="#destacados">Destacados</a></li>
+      <li><a class="hover:text-[var(--mint)]" href="#lookbook">Lookbook</a></li>
+      <li><a class="hover:text-[var(--mint)]" href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="flex items-center gap-3">
+      <a href="#destacados" class="btn btn-main !py-2 !px-4 text-sm hidden sm:inline-flex"><i class="bi bi-bag"></i> Carrito</a>
+      <button id="burger" class="md:hidden w-10 h-10 rounded-full glass grid place-items-center" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list text-2xl"></i></button>
+    </div>
+  </nav>
+  <div id="mobile" class="hidden glass max-w-6xl mx-auto mt-2 rounded-3xl p-5 md:hidden">
+    <ul class="flex flex-col gap-4 text-lg">
+      <li><a href="#colecciones">Colecciones</a></li>
+      <li><a href="#destacados">Destacados</a></li>
+      <li><a href="#lookbook">Lookbook</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="relative min-h-screen pt-32 pb-16 px-5 overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1800&q=80" alt="" class="absolute inset-0 w-full h-full object-cover opacity-40 -z-10">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-[#1b1035]/60 via-transparent to-[#1b1035]"></div>
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+    <div>
+      <span class="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm"><i class="bi bi-stars text-[var(--mint)]"></i> Nueva temporada ya disponible</span>
+      <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05]">Ropa que se siente como luz a través del vidrio.</h1>
+      <p class="mt-6 text-lg text-white/80 max-w-lg">Prendas ligeras, tonos translúcidos y cortes limpios para tu día a día. Envíos a todo el país y cambios sin costo.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#destacados" class="btn btn-main">Comprar ahora <i class="bi bi-arrow-right"></i></a>
+        <a href="#lookbook" class="btn btn-glass">Ver lookbook</a>
+      </div>
+    </div>
+    <div class="relative flex justify-center">
+      <div class="blob w-72 h-72 bg-[var(--coral)] -top-6 -left-6"></div>
+      <div class="blob w-64 h-64 bg-[var(--mint)] bottom-0 right-0"></div>
+      <div class="glass rounded-[2rem] p-4 w-full max-w-sm float">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" alt="Modelo con look de temporada" class="card-img">
+        <div class="glass glass-strong rounded-2xl p-4 mt-4 flex items-center justify-between">
+          <div><p class="font-semibold">Abrigo Cristal</p><p class="text-sm text-white/70">Edición limitada</p></div>
+          <p class="brand text-lg">$89</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLECCIONES -->
+<section id="colecciones" class="px-5 py-20">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-extrabold max-w-xl">Tres mundos, una misma transparencia</h2>
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <a href="#destacados" class="glass rounded-3xl p-4 block hover:-translate-y-1 transition">
+        <img class="card-img" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="Ropa de mujer">
+        <h3 class="mt-4 text-xl font-semibold">Mujer</h3><p class="text-white/70 text-sm">Vestidos, blusas y abrigos</p>
+      </a>
+      <a href="#destacados" class="glass rounded-3xl p-4 block hover:-translate-y-1 transition">
+        <img class="card-img" src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80" alt="Ropa de hombre">
+        <h3 class="mt-4 text-xl font-semibold">Hombre</h3><p class="text-white/70 text-sm">Sudaderas, camisas y chaquetas</p>
+      </a>
+      <a href="#destacados" class="glass rounded-3xl p-4 block hover:-translate-y-1 transition">
+        <img class="card-img" src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80" alt="Calzado">
+        <h3 class="mt-4 text-xl font-semibold">Calzado</h3><p class="text-white/70 text-sm">Zapatillas y botines</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DESTACADOS -->
+<section id="destacados" class="px-5 py-20">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-end justify-between flex-wrap gap-4">
+      <h2 class="text-3xl sm:text-4xl font-extrabold">Los más pedidos</h2>
+      <a href="#contacto" class="btn btn-glass">Ver catálogo completo</a>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+      <article class="glass rounded-3xl p-3"><img class="card-img" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80" alt="Camiseta"><div class="p-3"><h3 class="font-semibold">Camiseta Bruma</h3><div class="flex justify-between items-center mt-2"><span class="brand">$29</span><button class="w-9 h-9 rounded-full glass grid place-items-center" aria-label="Agregar"><i class="bi bi-plus-lg"></i></button></div></div></article>
+      <article class="glass rounded-3xl p-3"><img class="card-img" src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80" alt="Chaqueta"><div class="p-3"><h3 class="font-semibold">Chaqueta Prisma</h3><div class="flex justify-between items-center mt-2"><span class="brand">$119</span><button class="w-9 h-9 rounded-full glass grid place-items-center" aria-label="Agregar"><i class="bi bi-plus-lg"></i></button></div></div></article>
+      <article class="glass rounded-3xl p-3"><img class="card-img" src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80" alt="Vestido"><div class="p-3"><h3 class="font-semibold">Vestido Aurora</h3><div class="flex justify-between items-center mt-2"><span class="brand">$79</span><button class="w-9 h-9 rounded-full glass grid place-items-center" aria-label="Agregar"><i class="bi bi-plus-lg"></i></button></div></div></article>
+      <article class="glass rounded-3xl p-3"><img class="card-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Zapatillas"><div class="p-3"><h3 class="font-semibold">Zapatilla Ráfaga</h3><div class="flex justify-between items-center mt-2"><span class="brand">$95</span><button class="w-9 h-9 rounded-full glass grid place-items-center" aria-label="Agregar"><i class="bi bi-plus-lg"></i></button></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- LOOKBOOK con imagen de fondo -->
+<section id="lookbook" class="relative px-5 py-32 my-10 overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=80" alt="" class="absolute inset-0 w-full h-full object-cover -z-10">
+  <div class="absolute inset-0 bg-[#1b1035]/55 -z-10"></div>
+  <div class="glass max-w-3xl mx-auto rounded-[2rem] p-8 sm:p-12 text-center">
+    <h2 class="text-3xl sm:text-4xl font-extrabold">Lookbook otoño-invierno</h2>
+    <p class="mt-4 text-white/80">Capas, texturas suaves y una paleta que cambia con la luz. Descubre cómo combinar cada prenda.</p>
+    <a href="#contacto" class="btn btn-main mt-8">Explorar looks</a>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="px-5 py-20">
+  <div class="max-w-4xl mx-auto glass rounded-[2rem] p-8 sm:p-12 grid md:grid-cols-2 gap-8">
+    <div>
+      <h2 class="text-3xl font-extrabold">Recibe novedades primero</h2>
+      <p class="mt-3 text-white/75">Suscríbete y obtén 10% de descuento en tu primera compra.</p>
+    </div>
+    <form class="flex flex-col gap-3" onsubmit="event.preventDefault();this.reset();alert('¡Gracias por suscribirte!')">
+      <label class="sr-only" for="em">Correo</label>
+      <input id="em" type="email" required placeholder="tu@correo.com" class="glass rounded-full px-5 py-3 bg-transparent placeholder-white/60 outline-none">
+      <button class="btn btn-main justify-center">Suscribirme</button>
+    </form>
+  </div>
+</section>
+
+<footer class="px-5 pb-10">
+  <div class="glass max-w-6xl mx-auto rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+    <a href="#inicio" class="brand text-xl font-extrabold">VELO<span class="text-[var(--mint)]">.</span>studio</a>
+    <p class="text-sm text-white/70">© 2026 VELO Studio. Todos los derechos reservados.</p>
+    <div class="flex gap-3">
+      <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full glass grid place-items-center hover:bg-white/30"><i class="bi bi-instagram"></i></a>
+      <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full glass grid place-items-center hover:bg-white/30"><i class="bi bi-facebook"></i></a>
+      <a href="#" aria-label="TikTok" class="w-10 h-10 rounded-full glass grid place-items-center hover:bg-white/30"><i class="bi bi-tiktok"></i></a>
+      <a href="#" aria-label="WhatsApp" class="w-10 h-10 rounded-full glass grid place-items-center hover:bg-white/30"><i class="bi bi-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const b=document.getElementById('burger'),m=document.getElementById('mobile');
+  b.addEventListener('click',()=>{const o=m.classList.toggle('hidden');b.setAttribute('aria-expanded',String(!o))});
+  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.add('hidden');b.setAttribute('aria-expanded','false')}));
+  document.addEventListener('error',e=>{if(e.target.tagName==='IMG'){e.target.onerror=null;e.target.src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='800'%3E%3Crect width='100%25' height='100%25' fill='%23584a7a'/%3E%3C/svg%3E"}},true);
+</script>
+</body>
+</html>

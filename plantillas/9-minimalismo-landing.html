@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NORA — Básicos para todos los días</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#fbfaf7;--ink:#1c1c1a;--line:#e5e2da;--sand:#efebe2;--muted:#76736b}
+  html{scroll-behavior:smooth}
+  body{font-family:'Hanken Grotesk',sans-serif;font-weight:300;background:var(--paper);color:var(--ink)}
+  h1,h2,h3,.brand{font-family:'Instrument Serif',serif;font-weight:400}
+  .link{position:relative}
+  .link::after{content:"";position:absolute;left:0;bottom:-3px;height:1px;width:0;background:currentColor;transition:width .25s}
+  .link:hover::after{width:100%}
+  .btn{display:inline-block;padding:.95rem 2.2rem;border:1px solid var(--ink);font-weight:400;transition:background .2s,color .2s}
+  .btn-dark{background:var(--ink);color:var(--paper)} .btn-dark:hover{background:transparent;color:var(--ink)}
+  .btn-line:hover{background:var(--ink);color:var(--paper)}
+  .ph{overflow:hidden;background:var(--sand)}
+  .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .card:hover .ph img{transform:scale(1.03)}
+  :focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+</style>
+</head>
+<body>
+
+<header class="sticky top-0 z-50 bg-[var(--paper)]/90 backdrop-blur border-b border-[var(--line)]">
+  <nav class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#inicio" class="brand text-3xl">Nora</a>
+    <ul class="hidden md:flex gap-10 text-sm">
+      <li><a class="link" href="#coleccion">Colección</a></li>
+      <li><a class="link" href="#esenciales">Esenciales</a></li>
+      <li><a class="link" href="#materiales">Materiales</a></li>
+      <li><a class="link" href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="flex items-center gap-5">
+      <a href="#coleccion" class="hidden sm:block text-xl" aria-label="Carrito"><i class="bi bi-bag"></i></a>
+      <button id="burger" class="md:hidden text-2xl" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    </div>
+  </nav>
+  <div id="mobile" class="hidden md:hidden border-t border-[var(--line)] bg-[var(--paper)]">
+    <ul class="px-6 py-6 flex flex-col gap-5 text-lg">
+      <li><a href="#coleccion">Colección</a></li><li><a href="#esenciales">Esenciales</a></li><li><a href="#materiales">Materiales</a></li><li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="relative">
+  <div class="grid lg:grid-cols-2 min-h-[85vh]">
+    <div class="flex flex-col justify-center px-6 sm:px-14 py-20 order-2 lg:order-1">
+      <h1 class="text-6xl sm:text-7xl lg:text-8xl leading-[.95]">Lo justo.<br><em>Nada más.</em></h1>
+      <p class="mt-8 max-w-sm text-[var(--muted)] text-lg">Prendas básicas en algodón y lana, con cortes sencillos y colores neutros.</p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="#coleccion" class="btn btn-dark">Ver colección</a>
+        <a href="#materiales" class="btn btn-line">Materiales</a>
+      </div>
+    </div>
+    <div class="ph order-1 lg:order-2 min-h-[50vh]"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80" alt="Modelo con prenda neutra"></div>
+  </div>
+</section>
+
+<!-- COLECCION -->
+<section id="coleccion" class="max-w-7xl mx-auto px-6 py-28">
+  <div class="flex items-end justify-between border-b border-[var(--line)] pb-6">
+    <h2 class="text-5xl">Colección</h2>
+    <a href="#contacto" class="link text-sm">Ver todo</a>
+  </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-14 mt-12">
+    <article class="card"><div class="ph aspect-[3/4]"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80" alt="Camiseta blanca"></div><div class="flex justify-between mt-4"><h3 class="text-xl">Camiseta Base</h3><span>$28</span></div><p class="text-sm text-[var(--muted)]">Algodón orgánico</p></article>
+    <article class="card"><div class="ph aspect-[3/4]"><img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=700&q=80" alt="Vestido liso"></div><div class="flex justify-between mt-4"><h3 class="text-xl">Vestido Recto</h3><span>$84</span></div><p class="text-sm text-[var(--muted)]">Lino lavado</p></article>
+    <article class="card"><div class="ph aspect-[3/4]"><img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=80" alt="Chaqueta"></div><div class="flex justify-between mt-4"><h3 class="text-xl">Chaqueta Corta</h3><span>$118</span></div><p class="text-sm text-[var(--muted)]">Lana reciclada</p></article>
+    <article class="card"><div class="ph aspect-[3/4]"><img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=700&q=80" alt="Zapatilla blanca"></div><div class="flex justify-between mt-4"><h3 class="text-xl">Zapatilla Lisa</h3><span>$92</span></div><p class="text-sm text-[var(--muted)]">Cuero vegetal</p></article>
+  </div>
+</section>
+
+<!-- ESENCIALES con imagen de fondo -->
+<section id="esenciales" class="relative">
+  <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1800&q=80" alt="" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-[var(--paper)]/80"></div>
+  <div class="relative max-w-7xl mx-auto px-6 py-32 grid lg:grid-cols-2">
+    <div>
+      <h2 class="text-5xl sm:text-6xl leading-tight">Diez prendas.<br>Mil combinaciones.</h2>
+      <p class="mt-6 max-w-md text-lg">Un clóset pequeño es más fácil de usar. Armamos cápsulas de diez piezas que se mezclan entre sí.</p>
+      <a href="#coleccion" class="btn btn-dark mt-10">Armar mi cápsula</a>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALES -->
+<section id="materiales" class="max-w-7xl mx-auto px-6 py-28">
+  <h2 class="text-5xl border-b border-[var(--line)] pb-6">Materiales</h2>
+  <div class="grid md:grid-cols-3 gap-12 mt-12">
+    <div><i class="bi bi-flower1 text-2xl"></i><h3 class="text-2xl mt-4">Algodón orgánico</h3><p class="mt-2 text-[var(--muted)]">Cultivado sin pesticidas y con menos agua.</p></div>
+    <div><i class="bi bi-wind text-2xl"></i><h3 class="text-2xl mt-4">Lino europeo</h3><p class="mt-2 text-[var(--muted)]">Fresco en verano y más suave con cada lavado.</p></div>
+    <div><i class="bi bi-recycle text-2xl"></i><h3 class="text-2xl mt-4">Lana reciclada</h3><p class="mt-2 text-[var(--muted)]">Fibra recuperada, sin perder calidez.</p></div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="bg-[var(--sand)]">
+  <div class="max-w-3xl mx-auto px-6 py-28 text-center">
+    <h2 class="text-5xl">Escríbenos</h2>
+    <p class="mt-4 text-[var(--muted)]">Dudas de talla, envíos o cambios.</p>
+    <form class="mt-10 text-left grid gap-6" onsubmit="event.preventDefault();this.reset();alert('Gracias, te respondemos pronto.')">
+      <div><label for="e" class="text-sm">Correo</label><input id="e" type="email" required class="w-full bg-transparent border-b border-[var(--ink)] py-2 outline-none focus:border-b-2"></div>
+      <div><label for="m" class="text-sm">Mensaje</label><textarea id="m" rows="3" required class="w-full bg-transparent border-b border-[var(--ink)] py-2 outline-none focus:border-b-2"></textarea></div>
+      <div class="text-center"><button class="btn btn-dark">Enviar</button></div>
+    </form>
+  </div>
+</section>
+
+<footer class="border-t border-[var(--line)]">
+  <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
+    <a href="#inicio" class="brand text-2xl">Nora</a>
+    <p class="text-[var(--muted)]">© 2026 Nora. Todos los derechos reservados.</p>
+    <div class="flex gap-6 text-xl">
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+      <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const b=document.getElementById('burger'),m=document.getElementById('mobile');
+  b.addEventListener('click',()=>{const o=m.classList.toggle('hidden');b.setAttribute('aria-expanded',String(!o));b.firstElementChild.className=o?'bi bi-list':'bi bi-x-lg'});
+  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.add('hidden');b.setAttribute('aria-expanded','false');b.firstElementChild.className='bi bi-list'}));
+  document.addEventListener('error',e=>{if(e.target.tagName==='IMG'){e.target.onerror=null;e.target.src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='800'%3E%3Crect width='100%25' height='100%25' fill='%23e9e5db'/%3E%3C/svg%3E"}},true);
+</script>
+</body>
+</html>

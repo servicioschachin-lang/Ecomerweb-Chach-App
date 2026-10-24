@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lino &amp; Co — Ropa de lino y algodón</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#ebe3d6;--sd:#c9bfae;--sl:#fffaf0;--ink:#3b3a2c;--olive:#6b7d4f;--terra:#b9714b}
+  html{scroll-behavior:smooth}
+  body{font-family:'Work Sans',sans-serif;background:var(--bg);color:var(--ink)}
+  h1,h2,h3,h4,.brand{font-family:'Fraunces',serif;font-weight:700}
+  .raised{background:var(--bg);box-shadow:8px 8px 16px var(--sd),-8px -8px 16px var(--sl);border-radius:1.25rem}
+  .pressed{background:var(--bg);box-shadow:inset 5px 5px 10px var(--sd),inset -5px -5px 10px var(--sl);border-radius:1rem}
+  .nb{background:var(--bg);box-shadow:0 8px 16px -6px var(--sd);}
+  .navbar{background:var(--bg);box-shadow:0 8px 18px -8px var(--sd)}
+  .navbar .nav-link{color:var(--ink);font-weight:500;border-radius:2rem;padding:.5rem 1.1rem!important}
+  .navbar .nav-link.active{box-shadow:inset 3px 3px 6px var(--sd),inset -3px -3px 6px var(--sl);color:var(--olive)}
+  .navbar-toggler{border:0;border-radius:.9rem;box-shadow:4px 4px 8px var(--sd),-4px -4px 8px var(--sl);padding:.5rem .7rem}
+  .navbar-toggler:focus{box-shadow:inset 3px 3px 6px var(--sd),inset -3px -3px 6px var(--sl)}
+  .brand{font-size:1.8rem;color:var(--ink);text-decoration:none}
+  .brand span{color:var(--terra)}
+  .btn-n{background:var(--bg);color:var(--ink);border:0;border-radius:2rem;padding:.75rem 1.8rem;font-weight:500;box-shadow:6px 6px 12px var(--sd),-6px -6px 12px var(--sl)}
+  .btn-n:hover{color:var(--olive)} .btn-n:active{box-shadow:inset 4px 4px 8px var(--sd),inset -4px -4px 8px var(--sl)}
+  .btn-olive{background:var(--olive);color:#fff;border:0;border-radius:2rem;padding:.75rem 1.8rem;font-weight:500;box-shadow:6px 6px 12px var(--sd),-6px -6px 12px var(--sl)}
+  .btn-olive:hover{background:#5b6c42;color:#fff}
+  .round{width:44px;height:44px;border-radius:50%;display:inline-grid;place-items:center;background:var(--bg);color:var(--ink);box-shadow:5px 5px 10px var(--sd),-5px -5px 10px var(--sl);text-decoration:none;border:0}
+  .round:hover{color:var(--terra)} .round:active{box-shadow:inset 3px 3px 6px var(--sd),inset -3px -3px 6px var(--sl)}
+  .well{border-radius:1rem;overflow:hidden}
+  .well img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.02}
+  .tag{color:var(--olive);font-weight:600}
+  .chip{border:0;background:var(--bg);border-radius:2rem;padding:.5rem 1.2rem;color:var(--ink);box-shadow:4px 4px 8px var(--sd),-4px -4px 8px var(--sl)}
+  .chip.on{box-shadow:inset 3px 3px 6px var(--sd),inset -3px -3px 6px var(--sl);color:var(--olive);font-weight:600}
+  .form-control{background:var(--bg);border:0;border-radius:1rem;box-shadow:inset 5px 5px 10px var(--sd),inset -5px -5px 10px var(--sl);padding:.85rem 1.1rem;color:var(--ink)}
+  .form-control:focus{background:var(--bg);box-shadow:inset 5px 5px 10px var(--sd),inset -5px -5px 10px var(--sl),0 0 0 3px rgba(107,125,79,.4)}
+  .price{font-family:'Fraunces',serif;font-weight:700;color:var(--terra);font-size:1.25rem}
+  .section-bg{position:relative;border-radius:1.5rem;overflow:hidden}
+  .section-bg>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .section-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(235,227,214,.95),rgba(235,227,214,.55))}
+  .section-bg>.content{position:relative;z-index:1}
+  [hidden]{display:none!important}
+  :focus-visible{outline:3px solid var(--olive);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top py-3">
+  <div class="container">
+    <a class="brand" href="#inicio">Lino<span> &amp; </span>Co</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú"><i class="bi bi-list fs-3"></i></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 mt-3 mt-lg-0">
+        <li class="nav-item"><a class="nav-link" data-link="inicio" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="tienda" href="#tienda">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="nosotros" href="#nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="contacto" href="#contacto">Contacto</a></li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="round" href="#tienda" aria-label="Carrito"><i class="bi bi-bag"></i></a> <span id="count" class="ms-1 fw-semibold">0</span></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- INICIO -->
+<section data-page="inicio">
+  <div class="container hero py-5">
+    <div class="row align-items-center g-5 py-lg-4">
+      <div class="col-lg-6">
+        <p class="tag">Verano en tonos tierra</p>
+        <h1>Telas que respiran, prendas que duran</h1>
+        <p class="mt-4" style="max-width:30rem;opacity:.8">Lino, algodón orgánico y cortes relajados para vestir bien sin esfuerzo. Colores inspirados en la arena, el olivo y la arcilla.</p>
+        <div class="d-flex flex-wrap gap-4 mt-4">
+          <a href="#tienda" class="btn btn-olive">Ver tienda</a>
+          <a href="#nosotros" class="btn btn-n">Nuestra historia</a>
+        </div>
+      </div>
+      <div class="col-lg-6"><div class="raised p-3"><div class="well" style="aspect-ratio:4/5"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=80" alt="Modelo con ropa de lino"></div></div></div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4"><div class="raised p-4 h-100"><i class="bi bi-truck fs-2" style="color:var(--olive)"></i><h3 class="h5 mt-3">Envío gratis</h3><p class="mb-0 small" style="opacity:.75">En compras desde $60.</p></div></div>
+      <div class="col-md-4"><div class="raised p-4 h-100"><i class="bi bi-arrow-repeat fs-2" style="color:var(--olive)"></i><h3 class="h5 mt-3">Cambios fáciles</h3><p class="mb-0 small" style="opacity:.75">30 días para probar sin compromiso.</p></div></div>
+      <div class="col-md-4"><div class="raised p-4 h-100"><i class="bi bi-flower1 fs-2" style="color:var(--olive)"></i><h3 class="h5 mt-3">Fibras naturales</h3><p class="mb-0 small" style="opacity:.75">Tejidos de origen responsable.</p></div></div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="section-bg raised">
+      <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1600&q=80" alt="">
+      <div class="content p-4 p-md-5" style="max-width:34rem">
+        <h2 class="display-6">Colección Arcilla</h2>
+        <p style="opacity:.8">Camisas, pantalones y vestidos en cinco tonos tierra. Combinan entre sí.</p>
+        <a href="#tienda" class="btn btn-olive mt-2">Descubrir</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIENDA -->
+<section data-page="tienda" hidden>
+  <div class="container py-5">
+    <h1 class="display-4">Tienda</h1>
+    <div class="d-flex flex-wrap gap-3 my-4" id="filters">
+      <button class="chip on" data-filter="all">Todo</button>
+      <button class="chip" data-filter="camisas">Camisas</button>
+      <button class="chip" data-filter="vestidos">Vestidos</button>
+      <button class="chip" data-filter="pantalones">Pantalones</button>
+      <button class="chip" data-filter="calzado">Calzado</button>
+    </div>
+    <div class="row g-4" id="grid"></div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section data-page="nosotros" hidden>
+  <div class="container py-5">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6 order-lg-2"><div class="raised p-3"><div class="well" style="aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80" alt="Prendas dobladas"></div></div></div>
+      <div class="col-lg-6">
+        <h1 class="display-4">Vestir sin prisa</h1>
+        <p class="mt-3" style="opacity:.8">Lino &amp; Co empezó en 2014 con tres camisas y una máquina de coser prestada. Hoy seguimos haciendo tiradas pequeñas y trabajando con talleres cercanos.</p>
+        <p style="opacity:.8">Creemos que una prenda buena se nota al tacto y se confirma con los años.</p>
+        <div class="pressed p-4 mt-4"><h3 class="h5">Nuestros compromisos</h3><ul class="mb-0 mt-2" style="opacity:.8"><li>Tejidos naturales certificados</li><li>Empaques sin plástico</li><li>Reparación gratuita de costuras</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section data-page="contacto" hidden>
+  <div class="container py-5">
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <h1 class="display-4">Contacto</h1>
+        <p style="opacity:.8">Tallas, pedidos o ideas: te leemos.</p>
+        <div class="raised p-4 mt-4">
+          <p class="mb-2"><i class="bi bi-geo-alt me-2" style="color:var(--olive)"></i>Calle del Olivo 45, Ciudad</p>
+          <p class="mb-2"><i class="bi bi-telephone me-2" style="color:var(--olive)"></i>+00 987 654 321</p>
+          <p class="mb-0"><i class="bi bi-envelope me-2" style="color:var(--olive)"></i>hola@linoandco.com</p>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <form class="raised p-4" onsubmit="event.preventDefault();this.reset();alert('Mensaje enviado. ¡Gracias!')">
+          <div class="row g-3">
+            <div class="col-md-6"><label class="form-label" for="n">Nombre</label><input id="n" class="form-control" required></div>
+            <div class="col-md-6"><label class="form-label" for="e">Correo</label><input id="e" type="email" class="form-control" required></div>
+            <div class="col-12"><label class="form-label" for="m">Mensaje</label><textarea id="m" rows="5" class="form-control" required></textarea></div>
+            <div class="col-12"><button class="btn btn-olive">Enviar</button></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="container py-5">
+  <div class="raised p-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+    <span class="brand">Lino<span> &amp; </span>Co</span>
+    <small style="opacity:.7">© 2026 Lino &amp; Co. Todos los derechos reservados.</small>
+    <div class="d-flex gap-3">
+      <a class="round" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a class="round" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a class="round" href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+      <a class="round" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const U=(id,w=700)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+const products=[
+ {n:'Camisa Duna',p:54,c:'camisas',i:'1583743814966-8936f5b7be1a'},
+ {n:'Camiseta Algodón',p:32,c:'camisas',i:'1521572163474-6864f9cf17ab'},
+ {n:'Vestido Olivo',p:88,c:'vestidos',i:'1490481651871-ab68de25d43d'},
+ {n:'Vestido Arcilla',p:92,c:'vestidos',i:'1469334031218-e382a71b716b'},
+ {n:'Pantalón Lino',p:68,c:'pantalones',i:'1503342217505-b0a15ec3261c'},
+ {n:'Sudadera Arena',p:74,c:'pantalones',i:'1556821840-3a63f95609a7'},
+ {n:'Zapatilla Piedra',p:79,c:'calzado',i:'1549298916-b41d501d3772'},
+ {n:'Zapatilla Musgo',p:82,c:'calzado',i:'1525966222134-fcfa99b8ae77'}
+];
+const grid=document.getElementById('grid');let cart=0;
+grid.innerHTML=products.map(p=>`<div class="col-6 col-lg-3 prod" data-cat="${p.c}"><div class="raised p-3 h-100"><div class="well" style="aspect-ratio:3/4"><img loading="lazy" src="${U(p.i)}" alt="${p.n}"></div><h3 class="h6 mt-3 mb-1">${p.n}</h3><div class="d-flex justify-content-between align-items-center"><span class="price">$${p.p}</span><button class="round add" aria-label="Agregar ${p.n}"><i class="bi bi-plus-lg"></i></button></div></div></div>`).join('');
+grid.addEventListener('click',e=>{if(e.target.closest('.add'))document.getElementById('count').textContent=++cart});
+document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;
+ document.querySelectorAll('#filters .chip').forEach(x=>x.classList.toggle('on',x===b));
+ document.querySelectorAll('.prod').forEach(x=>x.hidden=!(b.dataset.filter==='all'||x.dataset.cat===b.dataset.filter))});
+const pages=[...document.querySelectorAll('[data-page]')];
+function route(){const h=(location.hash||'#inicio').slice(1);const t=pages.some(p=>p.dataset.page===h)?h:'inicio';
+ pages.forEach(p=>p.hidden=p.dataset.page!==t);
+ document.querySelectorAll('[data-link]').forEach(a=>a.classList.toggle('active',a.dataset.link===t));
+ window.scrollTo(0,0);const c=document.getElementById('menu');if(c.classList.contains('show'))bootstrap.Collapse.getOrCreateInstance(c).hide()}
+addEventListener('hashchange',route);route();
+document.addEventListener('error',e=>{if(e.target.tagName==='IMG'){e.target.onerror=null;e.target.src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='800'%3E%3Crect width='100%25' height='100%25' fill='%23d8cdb9'/%3E%3C/svg%3E"}},true);
+</script>
+</body>
+</html>

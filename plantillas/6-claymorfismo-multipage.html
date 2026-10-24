@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gominola — Zapatillas de colores</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#6ec1ff;--pink:#ff9ecb;--yellow:#ffd75e;--green:#8fe3a8;--cream:#fff8ec;--ink:#1f3552}
+  html{scroll-behavior:smooth}
+  body{font-family:'Quicksand',sans-serif;font-weight:600;background:var(--cream);color:var(--ink)}
+  h1,h2,h3,h4,.brand{font-family:'Lilita One',cursive;font-weight:400;letter-spacing:.01em}
+  .clay{border-radius:2.2rem;box-shadow:10px 12px 22px rgba(31,53,82,.22),inset -8px -8px 14px rgba(0,0,0,.1),inset 8px 8px 14px rgba(255,255,255,.65)}
+  .clay-sm{border-radius:1.2rem;box-shadow:5px 7px 12px rgba(31,53,82,.2),inset -4px -4px 8px rgba(0,0,0,.08),inset 4px 4px 8px rgba(255,255,255,.65)}
+  .bg-b{background:var(--blue)} .bg-p{background:var(--pink)} .bg-y{background:var(--yellow)} .bg-g{background:var(--green)} .bg-w{background:#fff}
+  .navbar{padding:.9rem 0}
+  .navbar .wrap{background:var(--yellow);border-radius:999px;padding:.55rem 1.2rem}
+  .navbar .nav-link{color:var(--ink);font-weight:700;border-radius:2rem;padding:.45rem 1.1rem!important}
+  .navbar .nav-link.active{background:var(--ink);color:#fff}
+  .navbar-toggler{border:0;background:var(--pink);border-radius:50%;width:46px;height:46px;padding:0;display:grid;place-items:center;box-shadow:4px 6px 10px rgba(31,53,82,.25),inset -3px -3px 6px rgba(0,0,0,.1),inset 3px 3px 6px rgba(255,255,255,.6)}
+  .brand{font-size:2rem;color:var(--ink);text-decoration:none}
+  .brand b{color:#fff;text-shadow:2px 2px 0 var(--ink);font-weight:400}
+  .btn-c{border:0;border-radius:999px;padding:.8rem 1.9rem;font-weight:700;color:var(--ink);box-shadow:6px 8px 14px rgba(31,53,82,.25),inset -4px -4px 8px rgba(0,0,0,.12),inset 4px 4px 8px rgba(255,255,255,.55);transition:transform .15s}
+  .btn-c:hover{transform:translateY(-3px);color:var(--ink)} .btn-c:active{transform:translateY(1px)}
+  .btn-ink{background:var(--ink);color:#fff}.btn-ink:hover{color:#fff}
+  .photo{border-radius:1.6rem;overflow:hidden;box-shadow:inset 0 0 0 6px rgba(255,255,255,.8);background:#fff}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .round{width:46px;height:46px;border-radius:50%;display:inline-grid;place-items:center;border:0;color:var(--ink);text-decoration:none;box-shadow:4px 6px 10px rgba(31,53,82,.22),inset -3px -3px 6px rgba(0,0,0,.1),inset 3px 3px 6px rgba(255,255,255,.6)}
+  .round:hover{transform:translateY(-2px);color:var(--ink)}
+  .hero h1{font-size:clamp(3rem,8vw,6rem);line-height:.95}
+  .hero h1 span{display:inline-block;background:var(--pink);padding:0 .25em;border-radius:.5em;transform:rotate(-2deg);box-shadow:5px 7px 12px rgba(31,53,82,.2),inset -4px -4px 8px rgba(0,0,0,.1),inset 4px 4px 8px rgba(255,255,255,.55)}
+  .price{font-family:'Lilita One',cursive;font-size:1.5rem}
+  .chip{border:0;border-radius:2rem;padding:.5rem 1.3rem;font-weight:700;color:var(--ink);background:#fff;box-shadow:4px 6px 10px rgba(31,53,82,.18),inset -3px -3px 6px rgba(0,0,0,.06),inset 3px 3px 6px rgba(255,255,255,.9)}
+  .chip.on{background:var(--ink);color:#fff}
+  .form-control{border:0;border-radius:1.2rem;padding:.9rem 1.1rem;background:#fff;font-weight:600;color:var(--ink);box-shadow:inset 4px 4px 8px rgba(31,53,82,.15),inset -4px -4px 8px #fff}
+  .form-control:focus{box-shadow:inset 4px 4px 8px rgba(31,53,82,.15),0 0 0 3px var(--blue)}
+  .hero-bg{position:relative;overflow:hidden}
+  .hero-bg>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35}
+  .hero-bg>.content{position:relative}
+  [hidden]{display:none!important}
+  :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+  @media (prefers-reduced-motion:no-preference){.wob{animation:wob 4s ease-in-out infinite}@keyframes wob{50%{transform:translateY(-10px) rotate(-3deg)}}}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <div class="wrap clay-sm w-100 d-flex flex-wrap align-items-center justify-content-between">
+      <a class="brand" href="#inicio">gomi<b>nola</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú"><i class="bi bi-list fs-3"></i></button>
+      <div class="collapse navbar-collapse justify-content-end" id="menu">
+        <ul class="navbar-nav align-items-lg-center gap-lg-1 py-3 py-lg-0">
+          <li class="nav-item"><a class="nav-link" data-link="inicio" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" data-link="tienda" href="#tienda">Tienda</a></li>
+          <li class="nav-item"><a class="nav-link" data-link="nosotros" href="#nosotros">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" data-link="contacto" href="#contacto">Contacto</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0 d-flex align-items-center gap-2"><a class="round bg-b" href="#tienda" aria-label="Carrito"><i class="bi bi-bag-heart"></i></a><span id="count" class="fw-bold">0</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- INICIO -->
+<section data-page="inicio">
+  <div class="container py-4">
+    <div class="clay bg-b hero-bg">
+      <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=1800&q=80" alt="">
+      <div class="content row align-items-center g-4 p-4 p-md-5 hero">
+        <div class="col-lg-7">
+          <h1>Zapas <span>dulces</span> para pisar fuerte</h1>
+          <p class="fs-5 mt-4" style="max-width:32rem">Suelas gorditas, colores de caramelo y mucha comodidad. Para niñas, niños y grandes.</p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#tienda" class="btn btn-c btn-ink">Ver zapatillas</a>
+            <a href="#nosotros" class="btn btn-c bg-y">Quiénes somos</a>
+          </div>
+        </div>
+        <div class="col-lg-5 d-flex justify-content-center">
+          <div class="clay bg-y p-3 wob" style="max-width:340px"><div class="photo" style="aspect-ratio:1"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="Zapatilla roja"></div><p class="brand fs-4 text-center mt-2 mb-0">Gummy Rojo · $72</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-4">
+    <div class="row g-4">
+      <div class="col-md-4"><div class="clay bg-p p-4 text-center h-100"><i class="bi bi-truck fs-1"></i><h3 class="h4 mt-2">Envío rápido</h3><p class="mb-0">Llega en 2 a 4 días.</p></div></div>
+      <div class="col-md-4"><div class="clay bg-g p-4 text-center h-100"><i class="bi bi-arrow-repeat fs-1"></i><h3 class="h4 mt-2">Cambio de talla</h3><p class="mb-0">Los pies crecen, lo sabemos.</p></div></div>
+      <div class="col-md-4"><div class="clay bg-y p-4 text-center h-100"><i class="bi bi-emoji-smile fs-1"></i><h3 class="h4 mt-2">Súper cómodas</h3><p class="mb-0">Plantilla blandita incluida.</p></div></div>
+    </div>
+  </div>
+
+  <div class="container py-4">
+    <div class="row g-4 align-items-stretch">
+      <div class="col-lg-6"><div class="clay bg-w p-3 h-100"><div class="photo h-100" style="min-height:280px"><img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=1000&q=80" alt="Botines altos"></div></div></div>
+      <div class="col-lg-6"><div class="clay bg-p p-4 p-md-5 h-100 d-flex flex-column justify-content-center"><h2 class="display-5">Edición Arcoíris</h2><p class="fs-5">Seis colores, una sola suela. Mezcla y combina cordones para crear tu par único.</p><div><a href="#tienda" class="btn btn-c btn-ink">Armar mi par</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIENDA -->
+<section data-page="tienda" hidden>
+  <div class="container py-5">
+    <h1 class="display-3">Tienda</h1>
+    <div class="d-flex flex-wrap gap-3 my-4" id="filters">
+      <button class="chip on" data-filter="all">Todas</button>
+      <button class="chip" data-filter="urbanas">Urbanas</button>
+      <button class="chip" data-filter="deporte">Deporte</button>
+      <button class="chip" data-filter="botines">Botines</button>
+      <button class="chip" data-filter="tacones">Tacones</button>
+    </div>
+    <div class="row g-4" id="grid"></div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section data-page="nosotros" hidden>
+  <div class="container py-5">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6"><h1 class="display-3">Nacimos jugando</h1><p class="fs-5 mt-3">Gominola empezó cuando dos amigos quisieron zapatos que parecieran juguetes pero aguantaran el día entero. Hoy diseñamos cada par con pruebas reales de comodidad.</p><div class="clay bg-g p-4 mt-4"><h3 class="h4">Lo que prometemos</h3><ul class="mb-0 mt-2"><li>Suelas flexibles y antideslizantes</li><li>Materiales lavables</li><li>Tallas del 22 al 46</li></ul></div></div>
+      <div class="col-lg-6"><div class="clay bg-y p-3"><div class="photo" style="aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" alt="Tienda con calzado"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section data-page="contacto" hidden>
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-5"><h1 class="display-3">Escríbenos</h1><div class="clay bg-b p-4 mt-4"><p class="mb-2"><i class="bi bi-geo-alt me-2"></i>Plaza Colores 8, Ciudad</p><p class="mb-2"><i class="bi bi-telephone me-2"></i>+00 555 123 456</p><p class="mb-0"><i class="bi bi-envelope me-2"></i>hola@gominola.com</p></div></div>
+      <div class="col-lg-7"><form class="clay bg-p p-4" onsubmit="event.preventDefault();this.reset();alert('¡Mensaje enviado!')"><div class="row g-3"><div class="col-md-6"><label class="form-label" for="n">Nombre</label><input id="n" class="form-control" required></div><div class="col-md-6"><label class="form-label" for="e">Correo</label><input id="e" type="email" class="form-control" required></div><div class="col-12"><label class="form-label" for="m">Mensaje</label><textarea id="m" rows="4" class="form-control" required></textarea></div><div class="col-12"><button class="btn btn-c btn-ink">Enviar</button></div></div></form></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="container py-5">
+  <div class="clay bg-g p-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+    <span class="brand">gomi<b>nola</b></span>
+    <small>© 2026 Gominola Calzado. Todos los derechos reservados.</small>
+    <div class="d-flex gap-3">
+      <a class="round bg-p" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a class="round bg-y" href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+      <a class="round bg-b" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a class="round bg-w" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const U=(id,w=700)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+const colors=['bg-p','bg-y','bg-g','bg-b'];
+const products=[
+ {n:'Gummy Rojo',p:72,c:'urbanas',i:'1542291026-7eec264c27ff'},
+ {n:'Caramelo Beige',p:68,c:'urbanas',i:'1549298916-b41d501d3772'},
+ {n:'Ráfaga Azul',p:84,c:'deporte',i:'1491553895911-0055eca6402d'},
+ {n:'Trote Blanco',p:79,c:'deporte',i:'1460353581641-37baddab0fa2'},
+ {n:'Botín Nube',p:95,c:'botines',i:'1595950653106-6c9ebd614d3a'},
+ {n:'Botín Piruleta',p:92,c:'botines',i:'1525966222134-fcfa99b8ae77'},
+ {n:'Tacón Fresa',p:88,c:'tacones',i:'1543163521-1bf539c55dd2'},
+ {n:'Mocasín Miel',p:76,c:'tacones',i:'1560769629-975ec94e6a86'}
+];
+const grid=document.getElementById('grid');let cart=0;
+grid.innerHTML=products.map((p,k)=>`<div class="col-6 col-lg-3 prod" data-cat="${p.c}"><div class="clay ${colors[k%4]} p-3 h-100"><div class="photo" style="aspect-ratio:1"><img loading="lazy" src="${U(p.i)}" alt="${p.n}"></div><h3 class="h5 mt-3 mb-1">${p.n}</h3><div class="d-flex justify-content-between align-items-center"><span class="price">$${p.p}</span><button class="round bg-w add" aria-label="Agregar ${p.n}"><i class="bi bi-plus-lg"></i></button></div></div></div>`).join('');
+grid.addEventListener('click',e=>{if(e.target.closest('.add'))document.getElementById('count').textContent=++cart});
+document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;
+ document.querySelectorAll('#filters .chip').forEach(x=>x.classList.toggle('on',x===b));
+ document.querySelectorAll('.prod').forEach(x=>x.hidden=!(b.dataset.filter==='all'||x.dataset.cat===b.dataset.filter))});
+const pages=[...document.querySelectorAll('[data-page]')];
+function route(){const h=(location.hash||'#inicio').slice(1);const t=pages.some(p=>p.dataset.page===h)?h:'inicio';
+ pages.forEach(p=>p.hidden=p.dataset.page!==t);
+ document.querySelectorAll('[data-link]').forEach(a=>a.classList.toggle('active',a.dataset.link===t));
+ window.scrollTo(0,0);const c=document.getElementById('menu');if(c.classList.contains('show'))bootstrap.Collapse.getOrCreateInstance(c).hide()}
+addEventListener('hashchange',route);route();
+document.addEventListener('error',e=>{if(e.target.tagName==='IMG'){e.target.onerror=null;e.target.src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23ffe6a8'/%3E%3C/svg%3E"}},true);
+</script>
+</body>
+</html>

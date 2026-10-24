@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NIMBO — Calzado suave</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Lora:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#e4e9f2;--sh-d:#bcc3d3;--sh-l:#ffffff;--ink:#2e3350;--accent:#6c63ff;--accent2:#ff8fb1}
+  html{scroll-behavior:smooth}
+  body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink)}
+  h1,h2,h3{font-family:'Lora',serif}
+  .raised{background:var(--bg);box-shadow:9px 9px 18px var(--sh-d),-9px -9px 18px var(--sh-l);border-radius:1.5rem}
+  .raised-sm{background:var(--bg);box-shadow:5px 5px 10px var(--sh-d),-5px -5px 10px var(--sh-l);border-radius:1rem}
+  .pressed{background:var(--bg);box-shadow:inset 6px 6px 12px var(--sh-d),inset -6px -6px 12px var(--sh-l);border-radius:1.25rem}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.8rem;border-radius:999px;font-weight:600;background:var(--bg);box-shadow:6px 6px 12px var(--sh-d),-6px -6px 12px var(--sh-l);transition:box-shadow .2s,color .2s}
+  .btn:hover{color:var(--accent)}
+  .btn:active{box-shadow:inset 4px 4px 8px var(--sh-d),inset -4px -4px 8px var(--sh-l)}
+  .btn-accent{color:#fff;background:linear-gradient(145deg,#7d75ff,#5a52e6);box-shadow:6px 6px 14px rgba(108,99,255,.35),-6px -6px 12px var(--sh-l)}
+  .btn-accent:hover{color:#fff}
+  .round{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--bg);box-shadow:5px 5px 10px var(--sh-d),-5px -5px 10px var(--sh-l)}
+  .round:hover{color:var(--accent)} .round:active{box-shadow:inset 3px 3px 6px var(--sh-d),inset -3px -3px 6px var(--sh-l)}
+  .img-well{border-radius:1.25rem;overflow:hidden;box-shadow:inset 4px 4px 8px rgba(0,0,0,.08)}
+  .img-well img{width:100%;height:100%;object-fit:cover}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header class="sticky top-0 z-50 px-4 pt-4">
+  <nav class="raised max-w-6xl mx-auto px-6 py-3 flex items-center justify-between" style="border-radius:999px">
+    <a href="#inicio" class="text-2xl font-bold tracking-tight" style="font-family:'Lora',serif">nimbo<span style="color:var(--accent)">.</span></a>
+    <ul class="hidden md:flex gap-8">
+      <li><a href="#modelos" class="hover:text-[var(--accent)]">Modelos</a></li>
+      <li><a href="#confort" class="hover:text-[var(--accent)]">Confort</a></li>
+      <li><a href="#tallas" class="hover:text-[var(--accent)]">Tallas</a></li>
+      <li><a href="#contacto" class="hover:text-[var(--accent)]">Contacto</a></li>
+    </ul>
+    <div class="flex items-center gap-3">
+      <a href="#modelos" class="round hidden sm:grid" aria-label="Carrito"><i class="bi bi-bag"></i></a>
+      <button id="burger" class="round md:hidden" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list text-2xl"></i></button>
+    </div>
+  </nav>
+  <div id="mobile" class="hidden raised max-w-6xl mx-auto mt-3 p-6 md:hidden">
+    <ul class="flex flex-col gap-4 text-lg">
+      <li><a href="#modelos">Modelos</a></li><li><a href="#confort">Confort</a></li><li><a href="#tallas">Tallas</a></li><li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="px-5 pt-16 pb-20">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="raised-sm inline-block px-4 py-1.5 text-sm">Calzado urbano · Edición primavera</p>
+      <h1 class="mt-6 text-5xl lg:text-6xl font-medium leading-[1.05]">Pisadas suaves, estilo firme.</h1>
+      <p class="mt-5 text-lg max-w-md opacity-75">Zapatillas con plantilla acolchada, suela flexible y colores calmados. Cómodas desde el primer paso.</p>
+      <div class="mt-8 flex flex-wrap gap-5">
+        <a href="#modelos" class="btn btn-accent">Ver modelos <i class="bi bi-arrow-right"></i></a>
+        <a href="#confort" class="btn">Cómo se hacen</a>
+      </div>
+    </div>
+    <div class="raised p-6">
+      <div class="img-well aspect-[4/3]"><img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=1200&q=80" alt="Zapatilla deportiva"></div>
+      <div class="flex justify-between items-center mt-5 px-1">
+        <div><p class="font-semibold text-lg">Nube Runner</p><p class="text-sm opacity-60">Unisex · 6 colores</p></div>
+        <span class="pressed px-5 py-2 font-semibold">$92</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODELOS -->
+<section id="modelos" class="px-5 py-16">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl">Nuestros modelos</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
+      <article class="raised p-4"><div class="img-well aspect-square"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Zapatilla roja"></div><h3 class="mt-4 text-lg">Ráfaga Roja</h3><div class="flex items-center justify-between mt-2"><span class="font-semibold">$95</span><button class="round" aria-label="Agregar"><i class="bi bi-plus-lg"></i></button></div></article>
+      <article class="raised p-4"><div class="img-well aspect-square"><img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80" alt="Zapatilla clásica"></div><h3 class="mt-4 text-lg">Clásica Arena</h3><div class="flex items-center justify-between mt-2"><span class="font-semibold">$78</span><button class="round" aria-label="Agregar"><i class="bi bi-plus-lg"></i></button></div></article>
+      <article class="raised p-4"><div class="img-well aspect-square"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=600&q=80" alt="Zapatilla azul"></div><h3 class="mt-4 text-lg">Bruma Azul</h3><div class="flex items-center justify-between mt-2"><span class="font-semibold">$84</span><button class="round" aria-label="Agregar"><i class="bi bi-plus-lg"></i></button></div></article>
+      <article class="raised p-4"><div class="img-well aspect-square"><img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80" alt="Zapatilla alta"></div><h3 class="mt-4 text-lg">Alta Nube</h3><div class="flex items-center justify-between mt-2"><span class="font-semibold">$99</span><button class="round" aria-label="Agregar"><i class="bi bi-plus-lg"></i></button></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- CONFORT -->
+<section id="confort" class="px-5 py-16">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+    <div class="raised p-6"><div class="img-well aspect-[5/4]"><img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=1000&q=80" alt="Detalle de suela"></div></div>
+    <div>
+      <h2 class="text-3xl sm:text-4xl">Pensadas para caminar todo el día</h2>
+      <div class="mt-8 space-y-5">
+        <div class="pressed p-5 flex gap-4"><i class="bi bi-cloud text-2xl" style="color:var(--accent)"></i><div><h3 class="font-semibold" style="font-family:'Outfit'">Plantilla acolchada</h3><p class="text-sm opacity-70">Espuma de memoria que se adapta a tu pie.</p></div></div>
+        <div class="pressed p-5 flex gap-4"><i class="bi bi-feather text-2xl" style="color:var(--accent)"></i><div><h3 class="font-semibold" style="font-family:'Outfit'">Ligeras</h3><p class="text-sm opacity-70">Menos de 280 gramos por pie.</p></div></div>
+        <div class="pressed p-5 flex gap-4"><i class="bi bi-recycle text-2xl" style="color:var(--accent)"></i><div><h3 class="font-semibold" style="font-family:'Outfit'">Materiales reciclados</h3><p class="text-sm opacity-70">Tejido superior hecho con botellas recuperadas.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TALLAS -->
+<section id="tallas" class="px-5 py-16">
+  <div class="max-w-3xl mx-auto raised p-8 text-center">
+    <h2 class="text-3xl">Encuentra tu talla</h2>
+    <p class="opacity-70 mt-2">Elige la tuya y te mostramos los modelos disponibles.</p>
+    <div id="sizes" class="flex flex-wrap justify-center gap-4 mt-8"></div>
+    <p id="sizeMsg" class="pressed mt-8 px-5 py-4 text-sm">Selecciona una talla para ver disponibilidad.</p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="px-5 py-16">
+  <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+    <div><h2 class="text-3xl">Escríbenos</h2><p class="opacity-70 mt-3">Te respondemos en menos de 24 horas.</p></div>
+    <form class="raised p-6 flex flex-col gap-4" onsubmit="event.preventDefault();this.reset();alert('¡Gracias! Te escribiremos pronto.')">
+      <label class="sr-only" for="e">Correo</label>
+      <input id="e" type="email" required placeholder="tu@correo.com" class="pressed px-5 py-3 bg-transparent outline-none">
+      <label class="sr-only" for="m">Mensaje</label>
+      <textarea id="m" rows="3" required placeholder="Tu mensaje" class="pressed px-5 py-3 bg-transparent outline-none"></textarea>
+      <button class="btn btn-accent justify-center">Enviar</button>
+    </form>
+  </div>
+</section>
+
+<footer class="px-5 pb-10 pt-6">
+  <div class="max-w-6xl mx-auto raised p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+    <a href="#inicio" class="text-xl font-bold" style="font-family:'Lora',serif">nimbo<span style="color:var(--accent)">.</span></a>
+    <p class="text-sm opacity-70">© 2026 NIMBO Calzado. Todos los derechos reservados.</p>
+    <div class="flex gap-4">
+      <a href="#" class="round" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="round" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="round" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      <a href="#" class="round" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const b=document.getElementById('burger'),m=document.getElementById('mobile');
+  b.addEventListener('click',()=>{const o=m.classList.toggle('hidden');b.setAttribute('aria-expanded',String(!o))});
+  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.add('hidden');b.setAttribute('aria-expanded','false')}));
+  const sz=document.getElementById('sizes'),msg=document.getElementById('sizeMsg');
+  for(let s=36;s<=46;s++){const x=document.createElement('button');x.className='round';x.textContent=s;x.setAttribute('aria-pressed','false');
+    x.onclick=()=>{[...sz.children].forEach(c=>{c.style.boxShadow='';c.style.color='';c.setAttribute('aria-pressed','false')});
+      x.style.boxShadow='inset 3px 3px 6px #bcc3d3, inset -3px -3px 6px #fff';x.style.color='#6c63ff';x.setAttribute('aria-pressed','true');
+      msg.textContent=`Talla ${s}: los 4 modelos están disponibles. Envío en 48 horas.`};sz.appendChild(x)}
+  document.addEventListener('error',e=>{if(e.target.tagName==='IMG'){e.target.onerror=null;e.target.src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23d3d9e6'/%3E%3C/svg%3E"}},true);
+</script>
+</body>
+</html>

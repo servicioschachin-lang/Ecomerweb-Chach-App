@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio Seis — Moda atemporal</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Figtree:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--stone:#efede8;--ink:#161616;--forest:#2f4a3a;--line:#d6d3cb;--muted:#6f6c65}
+  html{scroll-behavior:smooth}
+  body{font-family:'Figtree',sans-serif;font-weight:300;background:var(--stone);color:var(--ink)}
+  h1,h2,h3,h4,.brand{font-family:'Bodoni Moda',serif;font-weight:400}
+  .navbar{background:var(--stone);border-bottom:1px solid var(--line);padding:1.1rem 0}
+  .navbar .nav-link{color:var(--ink);font-weight:400;padding:.4rem 1rem!important;position:relative}
+  .navbar .nav-link.active{color:var(--forest)}
+  .navbar .nav-link.active::after{content:"";position:absolute;left:1rem;right:1rem;bottom:0;height:1px;background:var(--forest)}
+  .navbar-toggler{border:0;padding:.25rem}
+  .navbar-toggler:focus{box-shadow:0 0 0 2px var(--forest)}
+  .brand{font-size:1.9rem;color:var(--ink);text-decoration:none;font-style:italic}
+  .btn-m{display:inline-block;border:1px solid var(--ink);border-radius:0;padding:.85rem 2.2rem;color:var(--ink);background:transparent;font-weight:400;text-decoration:none;transition:.2s}
+  .btn-m:hover{background:var(--ink);color:var(--stone)}
+  .btn-forest{background:var(--forest);border-color:var(--forest);color:#fff}
+  .btn-forest:hover{background:transparent;color:var(--forest)}
+  .ph{overflow:hidden;background:#e1ddd3}
+  .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+  .pcard:hover .ph img{transform:scale(1.03)}
+  .hero h1{font-size:clamp(3rem,8vw,6.5rem);line-height:.98}
+  .rule{border-top:1px solid var(--line)}
+  .muted{color:var(--muted)}
+  .price{font-weight:400}
+  .tabs button{background:none;border:0;padding:.3rem 0;margin-right:1.8rem;color:var(--muted);border-bottom:1px solid transparent}
+  .tabs button.on{color:var(--ink);border-bottom-color:var(--ink)}
+  .form-control{background:transparent;border:0;border-bottom:1px solid var(--ink);border-radius:0;padding:.6rem 0;color:var(--ink)}
+  .form-control:focus{background:transparent;box-shadow:none;border-bottom:2px solid var(--forest)}
+  .add{background:none;border:1px solid var(--ink);width:36px;height:36px;display:grid;place-items:center;color:var(--ink)}
+  .add:hover{background:var(--ink);color:var(--stone)}
+  .bgsec{position:relative}
+  .bgsec>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .bgsec::after{content:"";position:absolute;inset:0;background:rgba(22,22,22,.45)}
+  .bgsec>.container{position:relative;z-index:1;color:#fff}
+  .soc a{color:var(--ink);font-size:1.25rem;margin-left:1.4rem}
+  .soc a:hover{color:var(--forest)}
+  [hidden]{display:none!important}
+  :focus-visible{outline:2px solid var(--forest);outline-offset:4px}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="brand" href="#inicio">Studio Seis</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú"><i class="bi bi-list fs-2"></i></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-lg-center mt-3 mt-lg-0">
+        <li class="nav-item"><a class="nav-link" data-link="inicio" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="tienda" href="#tienda">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="nosotros" href="#nosotros">Estudio</a></li>
+        <li class="nav-item"><a class="nav-link" data-link="contacto" href="#contacto">Contacto</a></li>
+        <li class="nav-item ms-lg-3"><a class="nav-link" href="#tienda"><i class="bi bi-bag"></i> <span id="count">0</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- INICIO -->
+<section data-page="inicio">
+  <div class="container hero py-5">
+    <div class="row g-5 align-items-center py-lg-4">
+      <div class="col-lg-6">
+        <h1>Seis prendas por temporada</h1>
+        <p class="muted mt-4 fs-5" style="max-width:28rem">Un estudio pequeño que diseña pocas piezas, con calma y buenos materiales.</p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a class="btn-m btn-forest" href="#tienda">Ver la colección</a>
+          <a class="btn-m" href="#nosotros">El estudio</a>
+        </div>
+      </div>
+      <div class="col-lg-6"><div class="ph" style="aspect-ratio:4/5"><img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1100&q=80" alt="Modelo con look sobrio"></div></div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+  <div class="container py-5 my-lg-4">
+    <div class="row g-5">
+      <div class="col-md-4"><h3 class="h4">Pocas piezas</h3><p class="muted mb-0">Producimos en tiradas cortas para no generar excedentes.</p></div>
+      <div class="col-md-4"><h3 class="h4">Buenos materiales</h3><p class="muted mb-0">Lana, algodón y seda de proveedores certificados.</p></div>
+      <div class="col-md-4"><h3 class="h4">Hechas para durar</h3><p class="muted mb-0">Reparamos tus prendas sin costo durante dos años.</p></div>
+    </div>
+  </div>
+
+  <div class="bgsec py-5">
+    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=80" alt="">
+    <div class="container py-5 my-lg-5">
+      <h2 class="display-4" style="max-width:34rem">Otoño en tonos de bosque</h2>
+      <a href="#tienda" class="btn-m mt-3" style="border-color:#fff;color:#fff" onmouseover="this.style.background='#fff';this.style.color='#161616'" onmouseout="this.style.background='transparent';this.style.color='#fff'">Descubrir</a>
+    </div>
+  </div>
+</section>
+
+<!-- TIENDA -->
+<section data-page="tienda" hidden>
+  <div class="container py-5">
+    <h1 class="display-3">Colección</h1>
+    <div class="tabs mt-4 pb-3 rule-bottom" id="filters" style="border-bottom:1px solid var(--line)">
+      <button class="on" data-filter="all">Todo</button>
+      <button data-filter="prendas">Prendas</button>
+      <button data-filter="abrigos">Abrigos</button>
+      <button data-filter="calzado">Calzado</button>
+      <button data-filter="bolsos">Bolsos</button>
+    </div>
+    <div class="row g-4 g-lg-5 mt-1" id="grid"></div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section data-page="nosotros" hidden>
+  <div class="container py-5">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6"><div class="ph" style="aspect-ratio:4/5"><img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80" alt="Perchero del estudio"></div></div>
+      <div class="col-lg-5 offset-lg-1">
+        <h1 class="display-4">El estudio</h1>
+        <p class="muted mt-4 fs-5">Studio Seis lo fundaron dos diseñadoras que querían un clóset más corto y mejor pensado.</p>
+        <p class="muted">Cada temporada elegimos seis prendas, las probamos durante meses y solo entonces las producimos. Si una no funciona, no sale a la venta.</p>
+        <div class="rule mt-4 pt-4"><p class="mb-1">Taller propio, a 30 km de la tienda.</p><p class="mb-0">Equipo de 9 personas.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section data-page="contacto" hidden>
+  <div class="container py-5">
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <h1 class="display-4">Contacto</h1>
+        <p class="muted mt-4">Escríbenos sobre pedidos, tallas o cambios.</p>
+        <div class="rule pt-4 mt-4 muted">
+          <p class="mb-2"><i class="bi bi-geo-alt me-2"></i>Calle Seis 6, Ciudad</p>
+          <p class="mb-2"><i class="bi bi-telephone me-2"></i>+00 666 000 666</p>
+          <p class="mb-0"><i class="bi bi-envelope me-2"></i>hola@studioseis.com</p>
+        </div>
+      </div>
+      <div class="col-lg-6 offset-lg-1">
+        <form onsubmit="event.preventDefault();this.reset();alert('Gracias, te respondemos pronto.')">
+          <div class="mb-4"><label class="small" for="n">Nombre</label><input id="n" class="form-control" required></div>
+          <div class="mb-4"><label class="small" for="e">Correo</label><input id="e" type="email" class="form-control" required></div>
+          <div class="mb-4"><label class="small" for="m">Mensaje</label><textarea id="m" rows="4" class="form-control" required></textarea></div>
+          <button class="btn-m btn-forest" type="submit">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="rule mt-5">
+  <div class="container py-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+    <span class="brand fs-4">Studio Seis</span>
+    <small class="muted">© 2026 Studio Seis. Todos los derechos reservados.</small>
+    <div class="soc">
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+      <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const U=(id,w=700)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+const products=[
+ {n:'Camisa Blanca',p:79,c:'prendas',i:'1583743814966-8936f5b7be1a'},
+ {n:'Vestido Seda',p:149,c:'prendas',i:'1434389677669-e08b4cac3105'},
+ {n:'Abrigo Lana',p:228,c:'abrigos',i:'1539109136881-3be0616acf4b'},
+ {n:'Chaqueta Corta',p:164,c:'abrigos',i:'1551028719-00167b16eac5'},
+ {n:'Zapatilla Lisa',p:112,c:'calzado',i:'1549298916-b41d501d3772'},
+ {n:'Tacón Bajo',p:134,c:'calzado',i:'1543163521-1bf539c55dd2'},
+ {n:'Bolso Cuero',p:189,c:'bolsos',i:'1548036328-c9fa89d128fa'},
+ {n:'Tote Lona',p:96,c:'bolsos',i:'1584917865442-de89df76afd3'}
+];
+const grid=document.getElementById('grid');let cart=0;
+grid.innerHTML=products.map(p=>`<div class="col-6 col-lg-3 prod" data-cat="${p.c}"><article class="pcard"><div class="ph" style="aspect-ratio:3/4"><img loading="lazy" src="${U(p.i)}" alt="${p.n}"></div><div class="d-flex justify-content-between align-items-start mt-3"><div><h3 class="h6 mb-1">${p.n}</h3><span class="price muted">$${p.p}</span></div><button class="add" aria-label="Agregar ${p.n}"><i class="bi bi-plus"></i></button></div></article></div>`).join('');
+grid.addEventListener('click',e=>{if(e.target.closest('.add'))document.getElementById('count').textContent=++cart});
+document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;
+ document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('on',x===b));
+ document.querySelectorAll('.prod').forEach(x=>x.hidden=!(b.dataset.filter==='all'||x.dataset.cat===b.dataset.filter))});
+const pages=[...document.querySelectorAll('[data-page]')];
+function route(){const h=(location.hash||'#inicio').slice(1);const t=pages.some(p=>p.dataset.page===h)?h:'inicio';
+ pages.forEach(p=>p.hidden=p.dataset.page!==t);
+ document.querySelectorAll('[data-link]').forEach(a=>a.classList.toggle('active',a.dataset.link===t));
+ window.scrollTo(0,0);const c=document.getElementById('menu');if(c.classList.contains('show'))bootstrap.Collapse.getOrCreateInstance(c).hide()}
+addEventListener('hashchange',route);route();
+document.addEventListener('error',e=>{if(e.target.tagName==='IMG'){e.target.onerror=null;e.target.src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='800'%3E%3Crect width='100%25' height='100%25' fill='%23dcd8cd'/%3E%3C/svg%3E"}},true);
+</script>
+</body>
+</html>
